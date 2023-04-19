@@ -36,7 +36,12 @@ function App() {
           conditionText: data.current.condition.text,
           icon: data.current.condition.icon,
         });
-      });
+      })
+      .catch((err) =>
+        alert(
+          "エラーが発生しました。ページをリロードしてもう一度トライしてください！"
+        )
+      );
   };
   return (
     <div className="test">

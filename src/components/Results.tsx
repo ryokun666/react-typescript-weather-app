@@ -10,29 +10,29 @@ type ResultsPropsType = {
   };
 };
 
-export default function Results(props: ResultsPropsType) {
+export default function Results({ results }: ResultsPropsType) {
+  const { country, cityName, temperature, conditionText, icon } = results; // 分割代入(Destructuring aasignment)
   return (
     <>
-      {props.results.country && <div>{props.results.country}</div>}
-      {props.results.temperature && (
+      {country && <div>{country}</div>}
+      {temperature && (
         <div>
-          props.results.temperature
+          temperature
           <span>℃</span>
         </div>
       )}
-      {props.results.conditionText && (
+      {conditionText && (
         <div>
-          {props.results.conditionText}
+          {conditionText}
           <span>℃</span>
         </div>
       )}
-      {props.results.conditionText && (
+      {conditionText && (
         <div>
-          <img src={props.results.icon} alt="icon" />
-          <span>{props.results.conditionText}</span>
+          <img src={icon} alt="icon" />
+          <span>{conditionText}</span>
         </div>
       )}
-      {console.log(props)}
     </>
   );
 }
